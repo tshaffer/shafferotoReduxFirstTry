@@ -8,4 +8,12 @@ export function selectPhoto(photo) {
   };
 }
 
+export function updatePhotos(photos) {
+    console.log("the photos have been updated.");
+    return {
+        type: 'PHOTOS_UPDATED',
+        payload: photos
+    }
+}
+
 
