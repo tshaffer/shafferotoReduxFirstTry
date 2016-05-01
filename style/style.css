@@ -1,0 +1,182 @@
+body {
+    height: 100%;
+}
+
+.shafferotoContainer {
+    width: 1400px;
+}
+
+.photoPageContainer {
+    display: flex;
+}
+
+.photosDiv {
+    flex: 3;
+    overflow-y: scroll;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid silver;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+}
+
+/*.flex-playlist-container {*/
+/*padding: 0;*/
+/*margin: 0;*/
+/*list-style: none;*/
+/*border: 1px solid silver;*/
+/*-ms-box-orient: horizontal;*/
+/*display: -webkit-box;*/
+/*display: -moz-box;*/
+/*display: -ms-flexbox;*/
+/*display: -moz-flex;*/
+/*display: -webkit-flex;*/
+/*display: flex;*/
+/*justify-content: space-around;*/
+/*-webkit-justify-content: space-around;*/
+/*}*/
+
+.wrap    {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.photoThumbsDiv {
+    margin: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f2f2f2;
+    /*width: 110px;*/
+    /*height:130px;*/
+    /*min-width: 110px;*/
+    /*max-height: 130px;*/
+    background: #f2f2f2;
+}
+
+.thumbImg {
+    /*width: 108px;*/
+    /*height: 108px;*/
+    padding: 4px;
+}
+
+.metadata {
+    flex: 1;
+}
+
+.metadataSubheading {
+    margin-bottom: 2px;
+}
+
+.photoMetadata {
+}
+
+.tagsSection {
+    margin-left: 16px;
+}
+
+.tagsList {
+    max-height: 100px;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+}
+
+.searchSection {
+    margin-left: 16px;
+}
+
+.tagsSubsection {
+    margin-left: 16px;
+}
+
+.datesSubsection {
+    margin-left: 16px;
+    margin-top: -4px;
+}
+
+
+
+.leftColumn {
+    width: 90px;
+    text-align: right;
+    display: inline-block;
+}
+
+.rightColumn {
+    width: 132px;
+    text-align: left;
+    display: inline-block;
+    padding-left: 2px;
+}
+
+.smallFont {
+    font-size: small;
+}
+
+.mediumFont {
+    font-size: medium;
+}
+.largeFont {
+    font-size: large;
+}
+
+button:focus { outline: none; }
+
+.plainButton {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: none;
+    background: none;
+}
+
+.dateQueryTypeRadioFirst {
+    margin: 0px 6px 0px 0px;
+}
+
+.dateQueryTypeRadio {
+    margin: 0px 6px 0px 6px;
+}
+
+.dateLabel {
+    display: inline-block;
+    font-size: small;
+    width: 40px;
+}
+
+.dateInput {
+    width: 130px;
+}
+
+.dateLabelBetween {
+    display: inline-block;
+    font-size: small;
+}
+
+.width130 {
+    width: 110px;
+}
+
+.mr4 {
+    margin-right: 4px;
+}
+
+.tagQueryLeft {
+    margin: 0px 6px 0px 0px;
+}
+
+.tagQueryRight {
+    margin: 0px 6px 0px 4px;
+}
