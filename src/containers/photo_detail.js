@@ -4,21 +4,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class PhotoDetail extends Component {
-    render() {
+import Metadata from '../components/metadata';
+import Search from '../components/search';
 
-        if (!this.props.photo) {
-            return <div>Select a photo to get started.</div>;
-        }
+class PhotoDetail extends Component {
+
+    render () {
+
+        console.log("eat pizza");
 
         return (
             <div>
-                <h3>Details for:</h3>
-                <div>Title: {this.props.photo.title}</div>
-                <div>Thumb Url: {this.props.photo.thumbUrl}</div>
+                <Metadata selectedPhoto = {this.props.photo}/>
+                <Search onQueryPhotos={this.props.onQueryPhotos} selectedPhoto = {this.props.photo}/>
             </div>
         );
     }
+
 }
 
 function mapStateToProps(state) {

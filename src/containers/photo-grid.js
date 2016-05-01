@@ -8,6 +8,15 @@ import { bindActionCreators } from 'redux';
 
 class PhotoGrid extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            photos: [],
+            selectedPhoto: {}
+        };
+        this.photosById = {};
+    }
+
     photoSelected(event) {
         console.log("photo selected");
         // this.selectedPhoto = this.photosById[event.target.id];
@@ -16,14 +25,6 @@ class PhotoGrid extends Component {
     }
 
     render() {
-
-        // if (this.props.photos) {
-        //     console.log("photoGrid length is " + this.props.photos.length.toString());
-        // }
-        //
-        // return (
-        //     <div>pizza</div>
-        // )
 
         let self = this;
         let photoNodes = this.props.photos.map(function(photo) {
@@ -55,23 +56,16 @@ class PhotoGrid extends Component {
 }
 
 function mapStateToProps(state) {
-    // Whatever is returned will show up as props
-    // inside of PhotoGrid
+    // Whatever is returned will show up as props inside of PhotoGrid
     return {
         photos: state.photos
     };
 }
 
-// Anything returned from this function will end up as props
-// on the PhotoGrid container
+// Anything returned from this function will end up as props on the PhotoGrid container
 function mapDispatchToProps(dispatch) {
-    // Whenever selectPhoto is called, the result shoudl be passed
-    // to all of our reducers
+    // Whenever selectPhoto is called, the result should be passed to all of our reducers
     return bindActionCreators({ selectPhoto: selectPhoto }, dispatch);
 }
 
-// Promote PhotoGrid from a component to a container - it needs to know
-// about this new dispatch method, selectPhoto. Make it available
-// as a prop.
 export default connect(mapStateToProps, mapDispatchToProps)(PhotoGrid);
-// export default connect(mapStateToProps)(PhotoGrid);
