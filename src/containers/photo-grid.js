@@ -3,6 +3,8 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectPhoto } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 class PhotoGrid extends Component {
 
@@ -12,7 +14,6 @@ class PhotoGrid extends Component {
         console.log("invoke onSelectPhoto");
         // this.props.onSelectPhoto(this.selectedPhoto);
     }
-
 
     render() {
 
@@ -29,9 +30,14 @@ class PhotoGrid extends Component {
             self.thumbUrl = "http://localhost:3000/photos/" + photo.thumbUrl.replace(" ", "%20");
             // self.photosById[photo.dbId] = photo;
             return (
-                <li className="flex-item photoThumbsDiv" key={photo.dbId} >
+                <li
+                    className="flex-item photoThumbsDiv"
+                    key={photo.dbId}
+                >
                     <img id={photo.dbId} src={self.thumbUrl} className="thumbImg" width={photo.width}
-                         height={photo.height} onClick={self.photoSelected.bind(self)} />
+                         height={photo.height}
+                         onClick={() => self.props.selectPhoto(photo)}
+                    />
                 </li>
             );
         });
@@ -58,15 +64,14 @@ function mapStateToProps(state) {
 
 // Anything returned from this function will end up as props
 // on the PhotoGrid container
-// function mapDispatchToProps(dispatch) {
-//     // Whenever selectBook is called, the result shoudl be passed
-//     // to all of our reducers
-//     // return bindActionCreators({ selectBook: selectBook }, dispatch);
-//     return null;
-// }
+function mapDispatchToProps(dispatch) {
+    // Whenever selectPhoto is called, the result shoudl be passed
+    // to all of our reducers
+    return bindActionCreators({ selectPhoto: selectPhoto }, dispatch);
+}
 
 // Promote PhotoGrid from a component to a container - it needs to know
 // about this new dispatch method, selectPhoto. Make it available
 // as a prop.
-// export default connect(mapStateToProps, mapDispatchToProps)(PhotoGrid);
-export default connect(mapStateToProps)(PhotoGrid);
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoGrid);
+// export default connect(mapStateToProps)(PhotoGrid);
